@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Posts</h1>
+<table>
+    <% @posts.each do |user| %>
+    <tr>
+        <td><%= user.title %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.image_url %></td>
+        <td><%= user.content %></td>
+    </tr>
+    <% end %> 
+</table>
+
+<h2>Ingrese su posts</h2>
+<form method="get" action="posts/create" class ="py-3">
+    Titulo: <input name="titulo" class="form-control">
+    URL Imagen :<input name="url_img" class="form-control">
+    Contenido : <textarea name="contenido" class="form-control"></textarea>
+    <input type="submit" value="Enviar" class="btn btn-primary my-2">
+</form>
